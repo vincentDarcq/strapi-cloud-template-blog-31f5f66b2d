@@ -938,6 +938,36 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiEcoGesteEcoGeste extends Schema.CollectionType {
+  collectionName: 'eco_gestes';
+  info: {
+    singularName: 'eco-geste';
+    pluralName: 'eco-gestes';
+    displayName: 'EcoGeste';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::eco-geste.eco-geste',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::eco-geste.eco-geste',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -993,6 +1023,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::eco-geste.eco-geste': ApiEcoGesteEcoGeste;
       'api::global.global': ApiGlobalGlobal;
     }
   }
