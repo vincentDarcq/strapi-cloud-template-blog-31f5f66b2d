@@ -15,14 +15,32 @@
     "title": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": [
-        "shared.media",
-        "shared.quote",
-        "shared.rich-text",
-        "shared.slider"
-      ]
+    "ID": {
+      "type": "integer",
+      "unique": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "tag": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "paid": {
+      "type": "boolean"
+    },
+    "impact": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "source": {
+      "type": "text"
     }
   }
 }
