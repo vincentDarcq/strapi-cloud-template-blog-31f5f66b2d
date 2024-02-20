@@ -794,7 +794,6 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String;
-    ID: Attribute.Integer & Attribute.Unique;
     description: Attribute.Text;
     tag: Attribute.String;
     color: Attribute.String;
