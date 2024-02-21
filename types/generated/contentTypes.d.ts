@@ -794,20 +794,9 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Text;
-    tag: Attribute.String;
-    color: Attribute.String;
-    image: Attribute.String;
-    paid: Attribute.Boolean;
-    impact: Attribute.Integer &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 5;
-        },
-        number
-      >;
-    source: Attribute.Text;
+    blocks: Attribute.DynamicZone<
+      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
